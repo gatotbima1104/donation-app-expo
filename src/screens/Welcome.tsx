@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { Text, View, Image } from "react-native";
+import { Text, View } from "react-native";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Animated, { useSharedValue, withSpring } from 'react-native-reanimated';
 import { useEffect } from "react";
@@ -28,13 +28,13 @@ const Welcome = ({ navigation }: any) => {
         setTimeout(() => imageWidth.value = withSpring(imageWidth.value + wp(40)), 800)
         setTimeout(() => imageHeight.value = withSpring(imageHeight.value + hp(18)), 800)
 
-        // setTimeout(() => navigation.navigate('Home'), 3000)
+        setTimeout(() => navigation.navigate('Home'), 3000)
 
     }, [])
 
     return (
         <View className="flex-1 bg-blue-200 justify-center items-center space-y-10">
-            <StatusBar style="light" />
+            <StatusBar style="dark" />
 
             {/* Donation image */}
             <Animated.View className="bg-white/20 rounded-full" style={{ padding: ring3 }}>
