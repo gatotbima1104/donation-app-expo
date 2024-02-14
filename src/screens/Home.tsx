@@ -4,8 +4,12 @@ import { ScrollView } from "react-native-gesture-handler";
 import { BellAlertIcon, MagnifyingGlassIcon } from 'react-native-heroicons/outline';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Categories from "../components/Categories";
+import { useState } from "react";
 
 const Home = ({ navigation }: any) => {
+
+    const [activeCategory, setActiveCategory] = useState('afrika')
+
     return (
         <View className="flex-1 bg-white">
             <StatusBar style="dark" />
@@ -41,7 +45,7 @@ const Home = ({ navigation }: any) => {
 
                 {/* list donation */}
                 <View className="mx-4">
-                    <Categories />
+                    <Categories activeCategory={activeCategory} setActiveCategory={setActiveCategory}/>
                 </View>
             </ScrollView>
         </View>
